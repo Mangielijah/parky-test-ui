@@ -178,6 +178,10 @@ class _DashboardState extends State<Dashboard> {
                                 ),
                               )
                               .toList()),
+                          if (index + 1 == groupListByDate.length)
+                            SizedBox(
+                              height: 100.h,
+                            ),
                         ],
                       );
                     },
@@ -185,6 +189,7 @@ class _DashboardState extends State<Dashboard> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
+                        color: Colors.transparent,
                         padding: EdgeInsets.symmetric(horizontal: 16.w),
                         margin: EdgeInsets.only(bottom: 20.h, top: 20.h),
                         child: ParkyButton(
