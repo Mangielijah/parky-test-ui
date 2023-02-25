@@ -96,11 +96,33 @@ class _TicketState extends State<Ticket> {
                       getStatus(),
                     ],
                   ),
-                  Text(
-                    'Start at ${DateFormat.jm().format(DateTime.parse(widget.ticketData['time']))}',
-                    style: GoogleFonts.inter(
-                      fontSize: 14.sp,
-                      color: Colors.black.withOpacity(0.5),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        const TextSpan(text: 'Start at '),
+                        WidgetSpan(
+                          child: Transform.translate(
+                            offset: Offset(0.0, -2.5.sp),
+                            child: Text(
+                              '.',
+                              style: GoogleFonts.inter(
+                                fontSize: 16.sp,
+                                letterSpacing: -1.sp,
+                                fontWeight: FontWeight.w700,
+                                color: const Color(0xffABABAB),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TextSpan(
+                          text:
+                              ' ${DateFormat.jm().format(DateTime.parse(widget.ticketData['time']))}',
+                        )
+                      ],
+                      style: GoogleFonts.inter(
+                        fontSize: 14.sp,
+                        color: Colors.black.withOpacity(0.5),
+                      ),
                     ),
                   ),
                 ],
