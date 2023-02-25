@@ -20,7 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
       () async {
         // context.pop();
         // Navigator.popUntil(context, (route) => route.isFirst);
-        GoRouter.of(context).pushReplacement('/signin');
+        Router.neglect(context, () {
+          GoRouter.of(context).pushReplacement('/signin');
+        });
       },
     );
     super.initState();
